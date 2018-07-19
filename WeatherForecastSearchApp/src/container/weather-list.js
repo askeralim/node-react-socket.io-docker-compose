@@ -1,14 +1,23 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
-//import { selectBook } from '../actions/index';
 import { bindActionCreators } from 'redux';
+import { Sparklines, SparklinesLine } from 'react-sparklines';
 
 class WeatherList extends Component{
   renderList(cityData){
     const name = cityData.city.name;
+    //console.log(cityData.list);
+    const tempArray = cityData.list.map((w)=>{ return w.main.temp});
+    console.log(tempArray);
     return (
           <tr key={name}>
             <td >{name}</td>
+            <td >
+            <Sparklines height={60} width={80} data={tempArray}>
+            <SparklinesLine color="red"></SparklinesLine>
+            </Sparklines>
+
+            </td>
           </tr>
           //  onClick={()=>this.props.selectBook(book)}
       )
@@ -25,7 +34,7 @@ class WeatherList extends Component{
         </tr>
       </thead>
       <tbody>
-        {this.props.weather.map(this.renderList)}
+        { this.props.weather.map(this.renderList)}
       </tbody>
       </table>
     );
