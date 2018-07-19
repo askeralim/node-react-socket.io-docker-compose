@@ -1,22 +1,32 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { Sparklines, SparklinesLine } from 'react-sparklines';
+import Chart from '../components/chart.js';
+import GoogleMap from '../components/google-map.js';
 
 class WeatherList extends Component{
   renderList(cityData){
+    if(!cityData)
+      return (<tr><td colspan='4'>No Data Found </td></tr>)
+    console.log('Rendering :.....',cityData);
     const name = cityData.city.name;
     //console.log(cityData.list);
-    const tempArray = cityData.list.map((w)=>{ return w.main.temp});
-    console.log(tempArray);
+    const tempData = cityData.list.map((w)=>{ return w.main.temp});
+    const pressureData = cityData.list.map((w)=>{ return w.main.pressure});
+    const humidityData = cityData.list.map((w)=>{ return w.main.humidity});
+    const {lon, lat} = cityData.city.coord;
+
     return (
           <tr key={name}>
-            <td >{name}</td>
+            <td ><GoogleMap lat={lat} lon={lon} /></td>
             <td >
-            <Sparklines height={60} width={80} data={tempArray}>
-            <SparklinesLine color="red"></SparklinesLine>
-            </Sparklines>
-
+              <Chart data={tempData} color="red" unit="K"/>
+            </td>
+            <td >
+              <Chart data={pressureData} color="blue" unit="hPa"/>
+            </td>
+            <td >
+              <Chart data={humidityData} color="green" unit="%"/>
             </td>
           </tr>
           //  onClick={()=>this.props.selectBook(book)}
@@ -28,9 +38,9 @@ class WeatherList extends Component{
       <thead>
         <tr>
           <th>City</th>
-          <th>Temperature</th>
-          <th>Pressure</th>
-          <th>Humidity</th>
+          <th>Temperature (K)</th>
+          <th>Pressure(hPa)</th>
+          <th>Humidity(%)</th>
         </tr>
       </thead>
       <tbody>
