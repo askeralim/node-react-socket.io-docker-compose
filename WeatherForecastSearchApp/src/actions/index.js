@@ -8,6 +8,7 @@ export function featchWeather(city){
   const url = `${ROOT_URL}&q=${city}`;
   const request = axios.get(url);
   console.log("API Response :",request)
+  // here we are returning the request, the redux reducer is responsible for picking the result of it and send it to the reducers.
   return {
     type:FETCH_WEATHER,
     payload:request
