@@ -8,10 +8,12 @@ There are two methods for getting started with this repo.
 Checkout this repo, install dependencies, then start the gulp process with the following:
 
 ```
-> git clone https://github.com/StephenGrider/ReduxSimpleStarter.git
-> cd ReduxSimpleStarter
+> git clone https://github.com/askeralim/React-Redux-Study.git
+> cd ChatApp-ReactReduxSocket.io
 > npm install
+#### Staring the React Server
 > npm start
+#### Staring the Socket.io server
 > node server.js
 ```
 
