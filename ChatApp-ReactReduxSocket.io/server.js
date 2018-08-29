@@ -28,7 +28,7 @@ io.on('connection', function (socket) {
 	});
 
 	socket.on('newUser',(name)=>{
-		const userId = name;//uuidV4();
+		const userId = uuidV4();
 		const user = {'id': userId, 'name':''+name, 'time':dateFormat(new Date(), "ddd h:MM:ss"), 'type':'USER', 'newMessage':false, 'show':true};
 		socket.emit('myDetails',user);
 		socket.emit('chatRoomList',chatRoomList);
@@ -39,7 +39,7 @@ io.on('connection', function (socket) {
 	});
 
 	socket.on('newChatRoom',(roomName)=>{
-		const chatRoomId = roomName;//uuidV4();
+		const chatRoomId = uuidV4();
 		const chatRoom = {'id': chatRoomId, 'name':''+roomName, 'time':dateFormat(new Date(), "ddd h:MM:ss"), 'type':'CHAT_ROOM', 'newMessage':false, 'show':true};
 		userList.push(chatRoom);
 		io.emit('chatroom',chatRoom)
