@@ -9,7 +9,7 @@ To complete these projects I have done the following courses online
 
 ### GIT Link
 ```
-git clone https://github.com/askeralim/React-Redux-Study.git
+git clone https://github.com/askeralim/node-react-socket.io-docker-compose.git
 ```
 ### Projects
 #### Project 1: BookListSelectApp 
