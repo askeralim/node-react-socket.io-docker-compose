@@ -11,7 +11,7 @@ Checkout this repo, install dependencies, then start the gulp process with the f
 Redis must be running in the local machine with default port.
 
 ```
-> git clone https://github.com/askeralim/React-Redux-Study.git
+> git clone https://github.com/askeralim/node-react-socket.io-docker-compose.git
 > cd ChatApp-RedisReactSocket.io
 > npm install
 #### Staring the React Server
