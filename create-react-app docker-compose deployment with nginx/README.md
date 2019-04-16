@@ -1,12 +1,16 @@
 # Dockerise create-react-app 
 ## Steps to follow
 * Create Project folder
-	> mkdir docker-compose-create-react-app
-	> cd docker-compose-create-react-app
+```
+mkdir docker-compose-create-react-app
+cd docker-compose-create-react-app
+```
 * Install create-react-app  [Installation Instructions](https://github.com/facebook/create-react-app) 
 * Create a react.js project 
-	> npx create-react-app server
-	> cd server
+```
+npx create-react-app server
+cd server
+```
 * Create a Dockerfile inside my-app folder
 	> touch Dockerfile
 * Copy all the below content of the Dockerfile
@@ -26,8 +30,10 @@ RUN npm install
 CMD ["npm", "start"]
 ```
 * Change directory to the parent folder 
-	> cd ..
-	> pwd will print /docker-compose-create-react-app
+```
+cd ..
+pwd will print /docker-compose-create-react-app
+```
 * Create docker-compose.yml file
 	> touch docker-compose.yml
 * Copy the following to the file
