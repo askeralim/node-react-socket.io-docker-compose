@@ -23,11 +23,11 @@ RUN npm install
 CMD ["npm", "start"]
 ```
 * Create docker image 
-	> docker build -t "create-react-app" .
+	> docker build -t "my-app-image" .
 * Run the Docker Image
-	> docker run -p 3000:3000 create-react-app
+	> docker run -p 3000:3000 my-app-image
 
 
 #### Find out more about me
 
-[LinkedIN](http://linkedin.com/in/askeralim) 
+Askerali Maruthullathil[Linked-IN](http://linkedin.com/in/askeralim) 
