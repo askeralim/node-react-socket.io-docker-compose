@@ -4,6 +4,23 @@
 * Create a react.js project 
 	> npx create-react-app my-app
 	> cd my-app
+* Create a Dockerfile inside my-app folder
+	> touch Dockerfile
+* Copy all the below content of the Dockerfile
+	> FROM node:8 as chatapp-build
+	> 
+	> #Setting the working directory as /app
+	> WORKDIR /app
+	> 
+	> #Copying everything to Docker Image
+	> COPY . ./
+	> 
+	> #Installing all dependencies.
+	> RUN npm install
+	> 
+	> # Running the dev server.
+	> CMD ["npm", "start"]
+	
 * Create docker image 
 	> docker build -t "create-react-app" .
 * Run the Docker Image
