@@ -4,10 +4,11 @@
 * Create a react.js project 
 	> npx create-react-app my-app
 	> cd my-app
+* Create docker image 
+	> docker build -t "create-react-app" .
+* Run the Docker Image
+	> docker run -p 3000:3000 create-react-app
 
-
-#### Familiar with Git?
-Checkout this repo, install dependencies, then start the projects with instruction mentioned in each projects
 
 #### Find out more about me
 
