@@ -1,6 +1,6 @@
 # React - Redux Projects [with Docker & NGINX]
 ### Background
-As part of understanding the concept of react.js node.js with docker I have developed some application, I hope it will help you to do a good startup on your learning journey
+As part of understanding the concept of react.js node.js with docker I have developed some application, I hope it will help you to do a quick start on your learning journey
 
 To complete these projects I have done the following courses online
 * [Docker Mastery: The Complete Toolset From a Docker Captain](https://www.udemy.com/docker-mastery/) 
