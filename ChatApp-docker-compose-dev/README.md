@@ -2,60 +2,102 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Available Scripts
 
-In the project directory, you can run:
+In the project directory, you can run the development server with following command:
 
-### ./startDevServer.sh
+	>./startDevServer.sh
 
 ## Application Archetecture
+```
+	NGINX
+	docker-compose
+	redis
+	Socket.io
+	node.js
+```
 This application is developed with docker containers with react.js as front end and socket.io as backend with redis with nginx as reverse proxy.
 ### docker-compose.yml
 ```
-	version: '3'
+version: '3'
 
-	services:
-	################################
-	#   Setup react app container
-	################################
-	  web:
-		build: ./client
-		expose:
-		  - 3000
-		volumes:
-		  - ./client:/app
+services:
+################################
+#   Setup react app container
+################################
+  web:
+    build: ./client
+    expose:
+      - 3000
+    volumes:
+      - ./client:/app
 
-	################################
-	#   Setup REDIS Server
-	################################
-	  redis:
-		image: redis:3.2-alpine
-		expose:
-		  - 6379
-		volumes:
-		  - redis_data:/data
-	################################
-	#   Setup Socket Server container
-	################################
-	  server:
-		build: ./server
-		expose:
-		  - 3001
-		depends_on: 
-		  - redis
-		volumes:
-		  - ./server:/app
-	################################
-	#   Setup nginx load balancer
-	################################
-	  nginx:
-		image: nginx:1.13 # this will use the latest version of 1.13.x
-		ports:
-		  - '80:80' # expose 80 on host and sent to 80 in container
-		depends_on: 
-		  - web
-		volumes:
-		  - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf:ro
-	volumes:  
-	  redis_data:
+################################
+#   Setup REDIS Server
+################################
+  redis:
+    image: redis:3.2-alpine
+    expose:
+      - 6379
+    volumes:
+      - redis_data:/data
+################################
+#   Setup Socket Server container
+################################
+  server:
+    build: ./server
+    expose:
+      - 3001
+    depends_on: 
+      - redis
+    volumes:
+      - ./server:/app
+################################
+#   Setup nginx load balancer
+################################
+  nginx:
+    image: nginx:1.13 # this will use the latest version of 1.13.x
+    ports:
+      - '80:80' # expose 80 on host and sent to 80 in container
+    depends_on: 
+      - web
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf:ro
+volumes:  
+  redis_data:
+
+```
+### NGINX Configuration
+```
+upstream client_LB {
+	server web:3000;
+}
+upstream server_LB {
+	ip_hash;
+	server server:3001;
+}
+server {
+
+	listen 80;
+	location / {
+		proxy_pass         http://client_LB;
+		proxy_redirect     off;
+		proxy_set_header   Host $host;
+		proxy_set_header   X-Real-IP $remote_addr;
+		proxy_set_header   X-Forwarded-For $proxy_add_x_forwarded_for;
+		proxy_set_header   X-Forwarded-Host $server_name;
+	}
+	location /socket.io/ {
+		proxy_pass         http://server_LB;
+		proxy_redirect     off;
+		proxy_set_header   Host $host;
+		proxy_set_header   X-Real-IP $remote_addr;
+		proxy_set_header   X-Forwarded-For $proxy_add_x_forwarded_for;
+		proxy_set_header   X-Forwarded-Host $server_name;
+    }
+	
+	location /img {
+		alias /etc/nginx/html/img;
+	}
+}
 
 ```
 
