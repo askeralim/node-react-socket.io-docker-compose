@@ -3,9 +3,13 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Available Scripts
 
 In the project directory, you can run the development server with following command:
+```
+./startDevServer.sh
 
-	>./startDevServer.sh
-
+	* This command will install all the dependencies in the local folder for the following
+		* server Socket.io 
+		* client react.js
+```
 ## Application Archetecture
 ```
 	NGINX
