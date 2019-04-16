@@ -8,7 +8,7 @@ There are two methods for getting started with this repo.
 Checkout this repo, install dependencies, then start the gulp process with the following:
 
 ```
-> git clone https://github.com/askeralim/React-Redux-Study.git
+> git clone https://github.com/askeralim/node-react-socket.io-docker-compose.git
 > cd ChatApp-ReactReduxSocket.io
 > npm install
 #### Staring the React Server
