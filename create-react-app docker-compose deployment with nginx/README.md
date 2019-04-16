@@ -63,4 +63,4 @@ services:
 
 #### Find out more about me
 
-Askerali Maruthullathil[Linked-IN](http://linkedin.com/in/askeralim) 
+Askerali Maruthullathil [ - LinkedIn](http://linkedin.com/in/askeralim) 
