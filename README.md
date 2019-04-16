@@ -1,4 +1,4 @@
-# React - Redux Projects [with Docker & NGINX]
+# React - Redux - Socket.io - docker-compose Projects with NGINX
 ### Background
 As part of understanding the concept of react.js node.js with docker I have developed some application, I hope it will help you to do a quick start on your learning journey
 
