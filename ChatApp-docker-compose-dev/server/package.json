@@ -1,0 +1,28 @@
+{
+  "name": "chatapp",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "dateformat": "^3.0.3",
+    "immutable": "^3.8.2",
+    "redis": "^2.8.0",
+    "express":"4.16.4",
+    "socket.io":"2.2.0",
+    "uuid":"3.3.2"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}

@@ -1,0 +1,50 @@
+version: '3'
+
+services:
+  # nginx:
+  #   image: nginx:1.13 # this will use the latest version of 1.13.x
+  #   ports:
+  #     - '80:80' # expose 80 on host and sent to 80 in container
+  #   depends_on: 
+  #     - drupal
+  #   volumes:
+  #     - /home/docker/Udemy-Docker-Course-Study/compose-drupal/nginx.conf:/etc/nginx/conf.d/default.conf:ro
+  web:
+    image: node:latest
+    build: web.Dockerfile
+    expose: 
+      - '8080'
+    # depends_on: 
+    #   - database
+    # volumes:
+    #   - drupal_modules:/var/www/html/modules
+    # restart: always
+    ports:
+      - '8080:8080'
+      - '3001:3001'
+  # database:
+  #   image: mysql:5.7
+  #   restart: always
+  #   environment:
+  #     MYSQL_DATABASE: 'db'
+  #     # So you don't have to use root, but you can if you like
+  #     MYSQL_USER: 'user'
+  #     # You can use whatever password you like
+  #     MYSQL_PASSWORD: 'password'
+  #     # Password for root access
+  #     MYSQL_ROOT_PASSWORD: 'password'
+  #   ports:
+  #     # <Port exposed> : < MySQL Port running inside container>
+  #     - '3306:3306'
+  #   expose:
+  #     # Opens port 3306 on the container
+  #     - '3306'
+  #     # Where our data will be persisted
+  #   volumes:
+  #     - mysql-data:/var/lib/mysql
+# volumes:
+#   drupal_modules:
+#   drupal_profiles:
+#   drupal_themes:
+#   drupal_sites:
+#   mysql-data:
