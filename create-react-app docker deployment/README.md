@@ -2,8 +2,10 @@
 ## Steps to follow
 * Install create-react-app  [Installation Instructions](https://github.com/facebook/create-react-app) 
 * Create a react.js project 
-	> npx create-react-app my-app
-	> cd my-app
+```
+npx create-react-app my-app
+cd my-app
+```
 * Create a Dockerfile inside my-app folder
 	> touch Dockerfile
 * Copy all the below content of the Dockerfile
