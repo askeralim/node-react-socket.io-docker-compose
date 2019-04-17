@@ -1,8 +1,6 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 ## Application Screen Video:
-<p align="center">
-  <img width="460" height="300" src="https://cdn-images-1.medium.com/max/800/1*z0ZViACGrSpOSELcve4n9g.gif">
-</p>
+![Application Screen Video](https://github.com/askeralim/node-react-socket.io-docker-compose/blob/master/ChatApp-docker-compose-dev/ChatApp.gif)
 ## Available Scripts
 
 In the project directory, you can run the development server with following command:
