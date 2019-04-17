@@ -1,5 +1,6 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
+## Application Screen Video:
+![ChatApp UI](https://cdn-images-1.medium.com/max/800/1*z0ZViACGrSpOSELcve4n9g.gif)
 ## Available Scripts
 
 In the project directory, you can run the development server with following command:
