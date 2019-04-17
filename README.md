@@ -35,7 +35,7 @@ Created react.js app using create-react-app and execute the Application using do
 #### Project 5: create-react-app deployment using docker-compose with nginx LB 
 Created react.js app using create-react-app and execute the Application using docker-compose with NGINX as Reverse-Proxy deployed in another container.
 
-[Project 5 Link]() 
+[Project 5 Link](https://github.com/askeralim/node-react-socket.io-docker-compose/tree/master/create-react-app%20with%20docker-compose%20and%20nginx) 
 
 #### Project 6 - ChatApp-1: Chat Application Using React.js - Socket.io  
 A Simple Chat Server developed using react.js and socker.io, This project will clear the concept of socket WebSockets.
