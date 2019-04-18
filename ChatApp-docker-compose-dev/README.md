@@ -1,4 +1,6 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## ChatApp Dev - Container Archetecture:
+![Application Archetecture](https://github.com/askeralim/node-react-socket.io-docker-compose/blob/master/ChatApp-docker-compose-dev/ChatApp-Archetecture.JPG)
 ## Application Screen Video:
 ![Application Screen Video](https://github.com/askeralim/node-react-socket.io-docker-compose/blob/master/ChatApp-docker-compose-dev/ChatApp.gif)
 ## Available Scripts
