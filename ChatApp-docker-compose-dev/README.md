@@ -15,14 +15,6 @@ In the project directory, you can run the development server with following comm
 		* server Socket.io 
 		* client react.js
 ```
-## Application Archetecture
-```
-	NGINX
-	docker-compose
-	redis
-	Socket.io
-	node.js
-```
 This application is developed with docker containers with react.js as front end and socket.io as backend with redis with nginx as reverse proxy.
 ### docker-compose.yml
 ```
